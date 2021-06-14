@@ -2,8 +2,6 @@ import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import ReactDOM from "react-dom";
 import { makeStyles } from '@material-ui/core/styles';
-import {ImageList} from '@material-ui/core/ImageList';
-import {ImageListItem} from '@material-ui/core/ImageListItem';
 import {
     Grid,
     Typography,
@@ -92,16 +90,12 @@ function App() {
         </Typography>
        </CardContent>
     <p>
-          <ImageList sx ={{Width:500, height:450}} cols = {2} rowHeight={164}>
+          <CardContent style ={{Width:400, height:600}} cols = {2} rowHeight={164}>
            {photos.map((img) => (
-            <ImageListItem key = {img.data}>
-              <img 
-              srcSet={$`{img.img}?w=164&h=164&fit=crop&auto=format 1x, ${img.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
-              loading="lazy" 
-            />
-        </ImageListItem>
+            <img src = {img} style ={{width: "500px", height: "300px"}}>
+              </img>
               ))}
-            </ImageList>
+            </CardContent>
       </p>
     </Card>
   );
